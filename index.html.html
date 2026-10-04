@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Unit 5: I have 4 pencils</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+        }
+        /* 16:9 Aspect Ratio Container for Mockup Frame */
+        .aspect-16-9 {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="aspect-16-9 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 rounded-2xl custom-shadow overflow-hidden flex flex-col text-white relative border-4 border-indigo-500/30">
+        
+        <!-- Top Navigation Bar / Header -->
+        <header class="bg-slate-900/80 backdrop-blur-md px-6 py-3 flex items-center justify-between border-b border-indigo-500/20 z-10">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-400 text-slate-900 font-extrabold px-3 py-1 rounded-lg text-sm shadow">
+                    UNIT 5
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-amber-300 tracking-wide">I have 4 pencils</h1>
+                    <p class="text-xs text-slate-300">Penyusun: <span class="text-indigo-300 font-medium">Dedy Irwanto, S.Pd.</span> (SD Kelas 3 - Fase B)</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <nav class="flex space-x-2">
+                <button onclick="switchTab('home')" id="btn-home" class="nav-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition flex items-center gap-1.5 shadow">
+                    <i class="fa-solid fa-house"></i> Home
+                </button>
+                <button onclick="switchTab('tp')" id="btn-tp" class="nav-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullseye"></i> Tujuan Pembelajaran
+                </button>
+                <button onclick="switchTab('materi')" id="btn-materi" class="nav-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open"></i> Uraian Materi
+                </button>
+                <button onclick="switchTab('latihan')" id="btn-latihan" class="nav-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-puzzle-piece"></i> Latihan Soal
+                </button>
+                <button onclick="switchTab('evaluasi')" id="btn-evaluasi" class="nav-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-clipboard-question"></i> Evaluasi Pilihan Ganda
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Dynamic Content Body -->
+        <main class="flex-1 overflow-y-auto p-6 relative flex flex-col justify-between">
+            
+            
+            <!-- 1. HOME TAB -->
+            <section id="tab-home" class="tab-content flex flex-col items-center justify-center h-full text-center space-y-6">
+                <div class="bg-indigo-600/30 p-4 rounded-full border border-indigo-400/30 animate-bounce">
+                    <i class="fa-solid fa-school text-5xl text-amber-300"></i>
+                </div>
+                <div class="max-w-xl space-y-2">
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Welcome to English Learning Class!</h2>
+                    <p class="text-sm text-indigo-200">Media Pembelajaran Interaktif Bahasa Inggris Kelas 3 SD Fase B. Mari belajar menghitung benda di kelas, posisi, dan kepemilikan dengan seru!</p>
+                </div>
+                <div class="flex gap-4">
+                    <button onclick="switchTab('tp')" class="px-6 py-2.5 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-xl text-sm shadow-lg hover:brightness-110 transition flex items-center gap-2">
+                        Mulai Belajar <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 2. TUJUAN PEMBELAJARAN TAB -->
+            <section id="tab-tp" class="tab-content hidden space-y-6 max-w-4xl mx-auto w-full">
+                <div class="flex items-center space-x-3 border-b border-slate-700 pb-3">
+                    <div class="p-2.5 bg-indigo-500/20 text-amber-300 rounded-xl">
+                        <i class="fa-solid fa-bullseye text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-300">Tujuan Pembelajaran (TP)</h2>
+                        <p class="text-xs text-slate-300">Capaian pembelajaran yang harus dikuasai oleh murid</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-800/80 p-5 rounded-xl border border-indigo-500/20 shadow-md flex flex-col gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-600/30 text-indigo-300 flex items-center justify-center font-bold">1</div>
+                        <h3 class="font-semibold text-sm text-amber-200">Mengidentifikasi Jumlah Benda</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">Siswa mampu menghitung dan menyebutkan jumlah benda-benda yang ada di dalam ruang kelas dalam bahasa Inggris (Angka 1-20).</p>
+                    </div>
+                    
+                    <div class="bg-slate-800/80 p-5 rounded-xl border border-indigo-500/20 shadow-md flex flex-col gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-600/30 text-indigo-300 flex items-center justify-center font-bold">2</div>
+                        <h3 class="font-semibold text-sm text-amber-200">Posisi Benda (Prepositions)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">Siswa mampu mengidentifikasi letak atau posisi benda-benda di kelas (seperti di atas meja, di dalam tas, dll).</p>
+                    </div>
+                    
+                    <div class="bg-slate-800/80 p-5 rounded-xl border border-indigo-500/20 shadow-md flex flex-col gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-600/30 text-indigo-300 flex items-center justify-center font-bold">3</div>
+                        <h3 class="font-semibold text-sm text-amber-200">Kepemilikan Benda (Possession)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">Siswa mampu menyatakan kepemilikan benda menggunakan ungkapan seperti "I have 4 pencils" dengan percaya diri.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. URAIAN MATERI TAB -->
+            <section id="tab-materi" class="tab-content hidden space-y-4 max-w-5xl mx-auto w-full">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-indigo-500/20 text-amber-300 rounded-lg">
+                            <i class="fa-solid fa-book-open text-lg"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-amber-300">Uraian Materi: Kosakata Benda di Kelas & Angka 1-20</h2>
+                    </div>
+                    <div class="text-xs text-indigo-200 bg-slate-800 px-3 py-1 rounded-full border border-indigo-500/30">
+                        Klik kartu untuk mendengar pengucapan / info
+                    </div>
+                </div>
+
+                <!-- Sub-sections inside Materi -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Kosakata Benda di Kelas -->
+                    <div class="bg-slate-800/70 p-4 rounded-xl border border-indigo-500/20 space-y-3">
+                        <h3 class="text-sm font-bold text-indigo-300 flex items-center gap-2">
+                            <i class="fa-solid fa-pencil text-amber-300"></i> Classroom Objects (Benda di Kelas)
+                        </h3>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Pencil (Pensil)</span>
+                                <span class="text-amber-400 font-semibold">✏️️</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Book (Buku)</span>
+                                <span class="text-amber-400 font-semibold">📘</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Ruler (Penggaris)</span>
+                                <span class="text-amber-400 font-semibold">📏</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Bag (Tas)</span>
+                                <span class="text-amber-400 font-semibold">🎒</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Eraser (Penghapus)</span>
+                                <span class="text-amber-400 font-semibold"> eraser </span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-700 flex justify-between items-center">
+                                <span>Crayon (Krayon)</span>
+                                <span class="text-amber-400 font-semibold">🖍️</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Angka 1-20 & Pola Kalimat -->
+                    <div class="bg-slate-800/70 p-4 rounded-xl border border-indigo-500/20 space-y-3">
+                        <h3 class="text-sm font-bold text-indigo-300 flex items-center gap-2">
+                            <i class="fa-solid fa-list-ol text-amber-300"></i> Numbers & Expression
+                        </h3>
+                        <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700 text-xs space-y-2">
+                            <p class="font-semibold text-amber-200">Contoh Angka (Numbers 1-20):</p>
+                            <p class="text-slate-300 leading-relaxed">1 (One), 2 (Two), 3 (Three), 4 (Four), 5 (Five) ... 10 (Ten), 15 (Fifteen), 20 (Twenty).</p>
+                        </div>
+                        <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                            <p class="font-semibold text-amber-200">Pola Kalimat Kepemilikan (Possession):</p>
+                            <p class="text-indigo-200 italic font-medium">"I have 4 pencils." (Saya mempunyai 4 pensil)</p>
+                            <p class="text-indigo-200 italic font-medium">"She has 3 books." (Dia perempuan mempunyai 3 buku)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. LATIHAN SOAL TAB (5 Ragam Soal) -->
+            <section id="tab-latihan" class="tab-content hidden space-y-4 max-w-4xl mx-auto w-full">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-indigo-500/20 text-amber-300 rounded-lg">
+                            <i class="fa-solid fa-puzzle-piece text-lg"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-amber-300">Latihan Interaktif (5 Ragam Soal)</h2>
+                    </div>
+                    <div class="text-xs text-slate-300" id="latihan-counter">Soal 1 dari 5</div>
+                </div>
+
+                <!-- Latihan Container -->
+                <div id="latihan-card" class="bg-slate-800/80 p-6 rounded-xl border border-indigo-500/20 shadow-lg space-y-4">
+                    <!-- Dynamic Question Area -->
+                </div>
+
+                <!-- Latihan Navigation Buttons -->
+                <div class="flex justify-between items-center pt-2">
+                    <button onclick="prevLatihan()" id="btn-prev-lat" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-bold rounded-lg transition disabled:opacity-50">
+                        <i class="fa-solid fa-arrow-left"></i> Sebelumnya
+                    </button>
+                    <div id="latihan-feedback" class="text-xs font-semibold"></div>
+                    <button onclick="nextLatihan()" id="btn-next-lat" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg transition">
+                        Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 5. EVALUASI PILIHAN GANDA TAB (5 Soal, 5 Opsi, 1 Benar) -->
+            <section id="tab-evaluasi" class="tab-content hidden space-y-4 max-w-4xl mx-auto w-full">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-indigo-500/20 text-amber-300 rounded-lg">
+                            <i class="fa-solid fa-clipboard-question text-lg"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-amber-300">Evaluasi Pilihan Ganda (5 Soal - 5 Opsi)</h2>
+                    </div>
+                    <div class="text-xs text-slate-300" id="evaluasi-counter">Soal 1 dari 5</div>
+                </div>
+
+                <!-- Evaluasi Card -->
+                <div id="evaluasi-card" class="bg-slate-800/80 p-6 rounded-xl border border-indigo-500/20 shadow-lg space-y-4">
+                    <!-- Dynamic Evaluation Area -->
+                </div>
+
+                <!-- Evaluasi Nav -->
+                <div class="flex justify-between items-center pt-2">
+                    <button onclick="prevEvaluasi()" id="btn-prev-eval" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-bold rounded-lg transition disabled:opacity-50">
+                        <i class="fa-solid fa-arrow-left"></i> Sebelumnya
+                    </button>
+                    <div id="evaluasi-score-display" class="text-xs font-bold text-amber-300"></div>
+                    <button onclick="nextEvaluasi()" id="btn-next-eval" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg transition">
+                        Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer Bar inside Mockup -->
+        <footer class="bg-slate-900/90 px-6 py-2.5 text-xs text-slate-400 flex justify-between items-center border-t border-indigo-500/20">
+            <div>Interactive Learning Media v1.0 • Fase B Kelas 3 SD</div>
+            <div class="text-amber-300 font-medium">Design Mockup 16:9 Widescreen</div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(el => {
+                el.classList.remove('bg-indigo-600', 'text-white', 'shadow');
+                el.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+            activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow');
+        }
+
+        // --- LATIHAN DATA (5 Ragam Soal) ---
+        const latihanData = [
+            {
+                type: "pilihan_ganda",
+                question: "1. Look at the picture! How many pencils do you see? (✏️ ✏️ ✏️ ✏️)",
+                options: ["Three pencils", "Four pencils", "Five pencils", "Two pencils"],
+                answer: 1 // Four pencils
+            },
+            {
+                type: "isian_singkat",
+                question: "2. Fill in the blank: Bahasa Inggris dari 'Buku' adalah ...",
+                answer: "book"
+            },
+            {
+                type: "mencocokkan",
+                question: "3. Pasangkan angka berikut: 'Twelve' dalam angka adalah...",
+                options: ["10", "11", "12", "20"],
+                answer: 2 // 12
+            },
+            {
+                type: "benar_salah",
+                question: "4. True or False: 'I have 5 rulers' berarti Saya mempunyai 5 penggaris.",
+                options: ["True (Benar)", "False (Salah)"],
+                answer: 0
+            },
+            {
+                type: "menyusun_kata",
+                question: "5. Susunlah kata acak berikut menjadi kalimat benar: [pencils / have / I / four]",
+                options: ["I have four pencils", "Four pencils I have", "Have I four pencils", "Pencils four I have"],
+                answer: 0
+            }
+        ];
+
+        let currentLatihanIdx = 0;
+        let latihanAnswers = {};
+
+        function renderLatihan() {
+            const item = latihanData[currentLatihanIdx];
+            document.getElementById('latihan-counter').innerText = `Soal ${currentLatihanIdx + 1} dari 5`;
+            document.getElementById('btn-prev-lat').disabled = currentLatihanIdx === 0;
+            document.getElementById('btn-next-lat').innerText = currentLatihanIdx === latihanData.length - 1 ? 'Selesai' : 'Selanjutnya';
+            document.getElementById('latihan-feedback').innerText = '';
+
+            let html = `<h3 class="text-sm font-bold text-amber-200 mb-3">${item.question}</h3>`;
+
+            if (item.type === 'isian_singkat') {
+                const val = latihanAnswers[currentLatihanIdx] || '';
+                html += `<input type="text" id="lat-input" value="${val}" oninput="saveLatihanInput(this.value)" placeholder="Ketik jawabanmu di sini..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-indigo-500">`;
+            } else {
+                html += `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">`;
+                item.options.forEach((opt, idx) => {
+                    const isSelected = latihanAnswers[currentLatihanIdx] === idx;
+                    const btnClass = isSelected ? 'bg-indigo-600 border-indigo-400 text-white shadow' : 'bg-slate-900/70 border-slate-700 text-slate-200 hover:bg-slate-700';
+                    html += `<button onclick="selectLatihan(${idx})" class="p-3 rounded-lg border text-xs text-left font-medium transition ${btnClass}">${String.fromCharCode(65 + idx)}. ${opt}</button>`;
+                });
+                html += `</div>`;
+            }
+
+            document.getElementById('latihan-card').innerHTML = html;
+        }
+
+        function selectLatihan(optIdx) {
+            latihanAnswers[currentLatihanIdx] = optIdx;
+            renderLatihan();
+            checkLatihanAnswer();
+        }
+
+        function saveLatihanInput(val) {
+            latihanAnswers[currentLatihanIdx] = val.trim().toLowerCase();
+        }
+
+        function checkLatihanAnswer() {
+            const item = latihanData[currentLatihanIdx];
+            const userAns = latihanAnswers[currentLatihanIdx];
+            const feedback = document.getElementById('latihan-feedback');
+
+            if (userAns === undefined || userAns === '') return;
+
+            if (item.type === 'isian_singkat') {
+                if (userAns === item.answer) {
+                    feedback.innerHTML = `<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Pintar! Jawaban benar.</span>`;
+                } else {
+                    feedback.innerHTML = `<span class="text-amber-400"><i class="fa-solid fa-circle-xmark"></i> Coba lagi! Jawaban: book</span>`;
+                }
+            } else {
+                if (userAns === item.answer) {
+                    feedback.innerHTML = `<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Hebat! Jawaban Kamu Tepat.</span>`;
+                } else {
+                    feedback.innerHTML = `<span class="text-rose-400"><i class="fa-solid fa-circle-xmark"></i> Kurang tepat, ayo coba pilihan lain.</span>`;
+                }
+            }
+        }
+
+        function nextLatihan() {
+            if (currentLatihanIdx < latihanData.length - 1) {
+                currentLatihanIdx++;
+                renderLatihan();
+            } else {
+                alertCustom("Latihan Selesai! Kamu telah mengerjakan seluruh soal latihan.");
+            }
+        }
+
+        function prevLatihan() {
+            if (currentLatihanIdx > 0) {
+                currentLatihanIdx--;
+                renderLatihan();
+            }
+        }
+
+
+        // --- EVALUASI DATA (5 Soal, 5 Opsi, 1 Benar) ---
+        const evaluasiData = [
+            {
+                question: "1. What is the English word for '15'?",
+                options: ["Fourteen", "Fifteen", "Sixteen", "Fifty", "Five"],
+                answer: 1 // Fifteen
+            },
+            {
+                question: "2. 'I have 7 ...' (✏️ - Benda pensil dalam bentuk jamak)",
+                options: ["pencil", "pencils", "book", "books", "ruler"],
+                answer: 1 // pencils
+            },
+            {
+                question: "3. Terjemahan dari kalimat 'She has three books' adalah...",
+                options: [
+                    "Dia laki-laki mempunyai tiga buku",
+                    "Dia perempuan mempunyai tiga buku",
+                    "Saya mempunyai tiga buku",
+                    "Kamu mempunyai tiga buku",
+                    "Mereka mempunyai tiga buku"
+                ],
+                answer: 1
+            },
+            {
+                question: "4. Perhatikan urutan angka berikut: Eleven, Twelve, Thirteen, ... , Fifteen. Kata yang rumpang adalah:",
+                options: ["Ten", "Fourteen", "Sixteen", "Twenty", "Twelve"],
+                answer: 1 // Fourteen
+            },
+            {
+                question: "5. Di mana biasanya posisi tas sekolah (school bag) yang rapi di kelas?",
+                options: [
+                    "Under the table / on the chair",
+                    "On the ceiling",
+                    "Inside the window",
+                    "Under the whiteboard",
+                    "Above the door"
+                ],
+                answer: 0
+            }
+        ];
+
+        let currentEvalIdx = 0;
+        let evalAnswers = {};
+
+        function renderEvaluasi() {
+            const item = evaluasiData[currentEvalIdx];
+            document.getElementById('evaluasi-counter').innerText = `Soal ${currentEvalIdx + 1} dari 5`;
+            document.getElementById('btn-prev-eval').disabled = currentEvalIdx === 0;
+            document.getElementById('btn-next-eval').innerText = currentEvalIdx === evaluasiData.length - 1 ? 'Kirim Evaluasi' : 'Selanjutnya';
+            
+            // Score summary calculation check
+            let answeredCount = Object.keys(evalAnswers).length;
+            document.getElementById('evaluasi-score-display').innerText = `Dijawab: ${answeredCount}/5`;
+
+            let html = `<h3 class="text-sm font-bold text-amber-200 mb-3">${item.question}</h3>`;
+            html += `<div class="space-y-2">`;
+            item.options.forEach((opt, idx) => {
+                const isSelected = evalAnswers[currentEvalIdx] === idx;
+                const btnClass = isSelected ? 'bg-indigo-600 border-indigo-400 text-white shadow' : 'bg-slate-900/70 border-slate-700 text-slate-200 hover:bg-slate-700';
+                html += `<button onclick="selectEvaluasi(${idx})" class="w-full p-3 rounded-lg border text-xs text-left font-medium transition flex items-center gap-3 ${btnClass}"><span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-300 text-xs">${String.fromCharCode(65 + idx)}</span> ${opt}</button>`;
+            });
+            html += `</div>`;
+
+            document.getElementById('evaluasi-card').innerHTML = html;
+        }
+
+        function selectEvaluasi(optIdx) {
+            evalAnswers[currentEvalIdx] = optIdx;
+            renderEvaluasi();
+        }
+
+        function nextEvaluasi() {
+            if (currentEvalIdx < evaluasiData.length - 1) {
+                currentEvalIdx++;
+                renderEvaluasi();
+            } else {
+                // Calculate final score
+                let score = 0;
+                evaluasiData.forEach((item, idx) => {
+                    if (evalAnswers[idx] === item.answer) score += 20;
+                });
+                alertCustom(`Evaluasi Selesai!\nNilai Akhir Anda: ${score} / 100`);
+            }
+        }
+
+        function prevEvaluasi() {
+            if (currentEvalIdx > 0) {
+                currentEvalIdx--;
+                renderEvaluasi();
+            }
+        }
+
+        // Safe custom message box substitute for alert()
+        function alertCustom(msg) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-slate-800 border border-indigo-500/40 p-6 rounded-2xl max-w-sm w-full text-center space-y-4 shadow-2xl">
+                    <div class="w-12 h-12 bg-amber-400/20 text-amber-300 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Informasi Pembelajaran</h3>
+                    <p class="text-xs text-slate-300 whitespace-pre-line">${msg}</p>
+                    <button onclick="this.closest('.fixed').remove()" class="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-xs transition">
+                        OK, Mengerti
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Initialize first renders on load
+        window.onload = function() {
+            renderLatihan();
+            renderEvaluasi();
+        };
+    </script>
+</body>
+</html>
